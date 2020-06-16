@@ -11,4 +11,8 @@ class MainController extends Controller
     public function getIndex() {
         return view('other.home');
     }
+
+    public function getAbout() {
+        return view('other.about');
+    }
 }
