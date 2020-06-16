@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@getIndex')->name('home');
 
-Route::get('/about', 'MainController@getAbout')->name('other.about');
+Route::get('about', 'MainController@getAbout')->name('other.about');
 
-Route::prefix('user', function() {
-
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
+    Route::get('/home', 'MainController@getUserIndex')->name('user.home');
 });
 
 Auth::routes();

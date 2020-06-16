@@ -8,10 +8,7 @@ be taken straight to the user home page -->
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    Home Page
-                </div>
+                <div class="card-body">Home Page</div>
             </div>
         </div>
     </div>
