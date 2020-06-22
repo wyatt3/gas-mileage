@@ -32,7 +32,6 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
         Route::get('/edit', "MaintController@getMaintenanceEdit")->name('maintenance');
         Route::post('/edit', "MaintController@postMaintenanceEdit")->name('maintenance');
         Route::post('/delete', "MaintController@postMaintenanceDelete")->name('maintenance');
-
     });
 
 });
