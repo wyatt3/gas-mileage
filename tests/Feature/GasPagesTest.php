@@ -25,25 +25,25 @@ class GasPagesTest extends TestCase
     
     public function testGetGas() {
         $user = factory(User::class)->make();
-        $view = $this->actingAs($user)->get('user/gasMileage/');
-        $view->assertStatus(200)->assertSee("Get Gas Mileage");
+        $view = $this->actingAs($user)->get('gasMileage/')
+            ->assertStatus(200)->assertSee("Get Gas Mileage");
     }
     
     public function testGetGasEdit() {
         $user = factory(User::class)->make();
-        $view = $this->actingAs($user)->get('user/gasMileage/edit');
-        $view->assertStatus(200)->assertSee("Get Gas Edit");
+        $view = $this->actingAs($user)->get('gasMileage/edit')
+            ->assertStatus(200)->assertSee("Get Gas Edit");
     }
 
     public function testPostGasEdit() {
         $user = factory(User::class)->make();
-        $view = $this->actingAs($user)->post('user/gasMileage/edit');
-        $view->assertStatus(200)->assertSee("Post Gas Edit");
+        $view = $this->actingAs($user)->post('gasMileage/edit')
+            ->assertStatus(200)->assertSee("Post Gas Edit");
     }
 
     public function testPostGasDelete() {
         $user = factory(User::class)->make();
-        $view = $this->actingAs($user)->post('user/gasMileage/delete');
-        $view->assertStatus(200)->assertSee("Post Gas Delete");
+        $view = $this->actingAs($user)->post('gasMileage/delete')
+            ->assertStatus(200)->assertSee("Post Gas Delete");
     }
 }

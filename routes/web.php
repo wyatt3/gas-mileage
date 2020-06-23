@@ -17,7 +17,7 @@ Route::get('/', 'MainController@getIndex')->name('home');
 
 Route::get('about', 'MainController@getAbout')->name('other.about');
 
-Route::group(['prefix' => '', 'middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function() {
     
     Route::group(['prefix' => 'gasMileage'], function() {
         Route::get('/', 'GasController@getGasMileage')->name('gas');
@@ -26,13 +26,15 @@ Route::group(['prefix' => '', 'middleware' => 'auth'], function() {
         Route::post('/delete', 'GasController@postGasDelete')->name('gas.delete');
     });
 
-    Route::group(['prefix' => 'maintenance', 'middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'maintenance'], function() {
         Route::get('/', "MaintController@getMaintenance")->name('maintenance');
         Route::get('/edit', "MaintController@getMaintenanceEdit")->name('maintenance');
         Route::post('/edit', "MaintController@postMaintenanceEdit")->name('maintenance');
         Route::post('/delete', "MaintController@postMaintenanceDelete")->name('maintenance');
     });
 
+    Route::group(['middleware' => 'admin'], function() {
+        // Admin area routes: GET manage users page, GET individual user page, POST delete user page
+    });
 });
-
 Auth::routes();

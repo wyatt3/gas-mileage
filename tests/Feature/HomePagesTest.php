@@ -14,10 +14,10 @@ class HomePagesTest extends TestCase
      * @return void
      */
     public function testHomePage() {
-        $this->get('/')->assertSee('Welcome to My Gas Mileage!')->assertViewIs('other.home');
+        $this->get('/')->assertViewIs('other.home');
     }
 
     public function testAboutPage() {
-        $this->get('about/')->assertSee('About Page')->assertViewIs('other.about');
+        $this->get('about/')->assertViewIs('other.about');
     }
 }

@@ -20,12 +20,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()) {
-            $user = Auth::user();
-            if($user->isAdmin == true) {
-                // go to page
-                return $next($request);
-            }
+        $user = Auth::user();
+        if($user->isAdmin == true) {
+            // go to page
+            return $next($request);
         }
         //send to home page if they arent a user or arent an admin
         return redirect(route('home'));
