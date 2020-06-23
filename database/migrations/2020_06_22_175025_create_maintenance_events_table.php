@@ -15,6 +15,11 @@ class CreateMaintenanceEventsTable extends Migration
     {
         Schema::create('maintenance_events', function (Blueprint $table) {
             $table->id();
+            $table->integer('car_id');
+            $table->date('date');
+            $table->integer('mileage');
+            $table->text('description');
+            $table->double('cost', 5, 2);
             $table->timestamps();
         });
     }
