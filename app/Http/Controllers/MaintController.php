@@ -17,10 +17,10 @@ class MaintController extends Controller
     }
 
     public function postMaintenanceEdit() {
-
+        return "Post Maintenance Edit";
     }
 
     public function postMaintenanceDelete() {
-        
+        return "Post Maintenance Delete";
     }
 }
