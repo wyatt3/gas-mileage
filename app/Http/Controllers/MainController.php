@@ -15,15 +15,11 @@ class MainController extends Controller
             return view('other.home');
         }
         else {
-            return redirect(route('user.home'));
+            return view('user.home');
         }
     }
 
     public function getAbout() {
         return view('other.about');
-    }
-
-    public function getUserIndex() {
-        return view('user.home');
     }
 }

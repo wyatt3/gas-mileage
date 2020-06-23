@@ -20,7 +20,8 @@ class UserTableSeeder extends Seeder
             $user = new \App\User([
             'name' => 'Wyatt Johnson',
             'email' => 'wyatt.j1834@gmail.com',
-            'password' => '$2y$10$CL4Vdn.Ex/X7xDDzOpDaEOeSIpBAkIyiVbE4W37NYXNEvArFWC2US' //123456
+            'password' => '$2y$10$CL4Vdn.Ex/X7xDDzOpDaEOeSIpBAkIyiVbE4W37NYXNEvArFWC2US', //123456
+            'isAdmin' => '1',
         ]);
         $user->save();
     }
