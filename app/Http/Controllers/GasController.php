@@ -17,10 +17,11 @@ class GasController extends Controller
     }
 
     public function postGasEdit() {
-
+        return "Post Gas Edit";
     }
 
     public function postGasDelete() {
+        return "Post Gas Delete";
 
     }
 }
