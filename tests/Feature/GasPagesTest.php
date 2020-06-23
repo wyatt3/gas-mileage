@@ -6,8 +6,11 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\User;
+
 class GasPagesTest extends TestCase
 { 
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -21,12 +24,26 @@ class GasPagesTest extends TestCase
     // }
     
     public function testGetGas() {
-        $user = factory(\App\User::class)->make();
-        $this->actingAs($user)->get('user/gasMileage/')->assertStatus(200);
+        $user = factory(User::class)->make();
+        $view = $this->actingAs($user)->get('user/gasMileage/');
+        $view->assertStatus(200)->assertSee("Get Gas Mileage");
     }
     
     public function testGetGasEdit() {
-        $user = factory(\App\User::class)->make();
-        $this->actingAs($user)->get('user/gasMileage/edit')->assertStatus(200);
+        $user = factory(User::class)->make();
+        $view = $this->actingAs($user)->get('user/gasMileage/edit');
+        $view->assertStatus(200)->assertSee("Get Gas Edit");
+    }
+
+    public function testPostGasEdit() {
+        $user = factory(User::class)->make();
+        $view = $this->actingAs($user)->post('user/gasMileage/edit');
+        $view->assertStatus(200)->assertSee("Post Gas Edit");
+    }
+
+    public function testPostGasDelete() {
+        $user = factory(User::class)->make();
+        $view = $this->actingAs($user)->post('user/gasMileage/delete');
+        $view->assertStatus(200)->assertSee("Post Gas Delete");
     }
 }
