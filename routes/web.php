@@ -28,13 +28,16 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['prefix' => 'maintenance'], function() {
         Route::get('/', "MaintController@getMaintenance")->name('maintenance');
-        Route::get('/edit', "MaintController@getMaintenanceEdit")->name('maintenance');
-        Route::post('/edit', "MaintController@postMaintenanceEdit")->name('maintenance');
-        Route::post('/delete', "MaintController@postMaintenanceDelete")->name('maintenance');
+        Route::get('/edit', "MaintController@getMaintenanceEdit")->name('maintenance.edit');
+        Route::post('/edit', "MaintController@postMaintenanceEdit")->name('maintenance.edit');
+        Route::post('/delete', "MaintController@postMaintenanceDelete")->name('maintenance.delete');
     });
 
-    Route::group(['middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         // Admin area routes: GET manage users page, GET individual user page, POST delete user page
+        Route::get('/', 'AdminController@getIndex')->name('admin');
+        Route::get('/user', 'AdminController@getUser')->name('admin.user');
+        Route::post('/user/delete', 'AdminController@deleteUser')->name('admin.user.delete');
     });
 });
 Auth::routes();
