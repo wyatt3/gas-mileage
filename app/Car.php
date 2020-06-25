@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['mileage', 'make', 'model', 'year', 'photo_name'];
 
     public function user() {
         return $this->belongsTo('App\User');

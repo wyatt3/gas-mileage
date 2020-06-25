@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use App\Car;
 
 class MainController extends Controller
 {
@@ -15,7 +16,9 @@ class MainController extends Controller
             return view('other.home');
         }
         else {
-            return view('user.home');
+            $user = Auth::user();
+            $cars = Car::where('user_id', $user->id)->paginate(4);
+            return view('user.home', ['cars' => $cars, 'user' => $user]);
         }
     }
 
