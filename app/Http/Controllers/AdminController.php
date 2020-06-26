@@ -14,7 +14,8 @@ class AdminController extends Controller
         return "Get User Page";
     }
 
-    public function deleteUser() {
-        return "Delete User";
+    public function postUserDelete(Request $request) {
+        
     }
+
 }

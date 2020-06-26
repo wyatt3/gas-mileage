@@ -5,3 +5,11 @@ body {
 .dropdown-item:hover {
     background-color: #32425a;;
 }
+
+.car-card {
+    height: 350px;
+}
+
+.car-image {
+    height: 250px;
+}

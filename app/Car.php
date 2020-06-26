@@ -11,6 +11,7 @@ class Car extends Model
     public function name() {
         return $this->name = $this->year . ' ' . $this->make . ' ' . $this->model; 
     }
+
     public function user() {
         return $this->belongsTo('App\User');
     }

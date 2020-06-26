@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Car;
+Use App\User;
 
 class CarTableSeeder extends Seeder
 {
@@ -12,6 +13,7 @@ class CarTableSeeder extends Seeder
      */
     public function run()
     {
+        $user = User::find('2');
         $car = new Car([
             'user_id' => '2',
             'mileage' => '125000',
@@ -20,7 +22,7 @@ class CarTableSeeder extends Seeder
             'year' => '2000',
             'photo_name' => 'photo',
         ]);
-        $car->save();
+        $user->cars()->save($car);
         $car = new Car([
             'user_id' => '2',
             'mileage' => '123456',
@@ -29,7 +31,8 @@ class CarTableSeeder extends Seeder
             'year' => '2000',
             'photo_name' => 'photo2',
         ]);
-        $car->save();
+        $user->cars()->save($car);
+        $user = User::find('1');
         $car = new Car([
             'user_id' => '1',
             'mileage' => '123456',
@@ -38,6 +41,6 @@ class CarTableSeeder extends Seeder
             'year' => '2000',
             'photo_name' => 'photo3',
         ]);
-        $car->save();
+        $user->cars()->save($car);
     }
 }
