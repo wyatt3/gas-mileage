@@ -40,7 +40,7 @@ class GasController extends Controller
         return "Post Gas Edit";
     }
 
-    public function postGasDelete() {
+    public function getGasDelete() {
         return "Post Gas Delete";
 
     }

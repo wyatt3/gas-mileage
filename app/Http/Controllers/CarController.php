@@ -40,12 +40,12 @@ class CarController extends Controller
         $car->save();
     }
 
-    public function postCarDelete(Request $request) {
+    public function getCarDelete(Request $request) {
         $car = Car::find($request['id']);
         $car->user()->dissociate();
         $car->gasevents()->delete();
         $car->maintenanceevents()->delete();
         $car->delete();
-        return redirect()->route('home')->with('message', 'Car deleted.');
+        return redirect(route('home'))->with('message', 'Car deleted.');
     }
 }

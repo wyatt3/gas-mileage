@@ -13,3 +13,8 @@ body {
 .car-image {
     height: 250px;
 }
+
+.copyright {
+    padding-right: 1%;
+    color: #999999;
+}

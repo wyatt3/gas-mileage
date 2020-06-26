@@ -20,7 +20,7 @@
     <link href="{{ asset('css/mytheme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
-<body class="bg-yellow">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
@@ -55,7 +55,7 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
+                            
                                 <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item text-light" href="{{ route('user') }}">Account</a>
                                     <a class="dropdown-item text-light" href="{{ route('logout') }}"
@@ -74,11 +74,23 @@
                 </div>
             </div>
         </nav>
+        @if(Session::has('message'))
+        <div class="container mt-4 mb-0">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="alert alert-warning">{{Session::get('message') }}</p>
+                </div>
+            </div>
+        </div>
+        @endif
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <footer>
+        <p class='text-right copyright fixed-bottom'>&copy; Wyatt Johnson <script>document.write(new Date().getFullYear())</script></p>
+    </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

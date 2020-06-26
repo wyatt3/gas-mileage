@@ -20,7 +20,9 @@ Route::get('about', 'MainController@getAbout')->name('other.about');
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['prefix' => 'account'], function() {
         Route::get('/', 'MainController@getUserInfo')->name('user');
-        Route::post('/delete', 'AdminController@postUserDelete')->name('user.delete');
+        Route::get('/edit', 'MainController@getUserEdit')->name('user.edit');
+        Route::post('/edit', 'MainController@postUserEdit')->name('user.edit');
+        Route::get('/delete', 'AdminController@getUserDelete')->name('user.delete');
     });
 
     Route::group(['prefix' => 'car'], function() {
@@ -29,7 +31,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/add', 'CarController@postCarAdd')->name('car.add');
         Route::get('/edit', 'CarController@getCarEdit')->name('car.edit');
         Route::post('/edit', 'CarController@postCarEdit')->name('car.edit');
-        Route::post('/delete', 'CarController@postCarDelete')->name('car.delete');
+        Route::get('/delete', 'CarController@getCarDelete')->name('car.delete');
     });
 
     Route::group(['prefix' => 'gasMileage'], function() {
@@ -38,7 +40,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/add', 'GasController@postGasAdd')->name('gas.add');
         Route::get('/edit', 'GasController@getGasEdit')->name('gas.edit');
         Route::post('/edit', 'GasController@postGasEdit')->name('gas.edit');
-        Route::post('/delete', 'GasController@postGasDelete')->name('gas.delete');
+        Route::get('/delete', 'GasController@getGasDelete')->name('gas.delete');
     });
 
     Route::group(['prefix' => 'maintenance'], function() {
@@ -47,13 +49,13 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/add', 'MaintenanceController@postMaintenanceAdd')->name('maintenance.add');
         Route::get('/edit', "MaintController@getMaintenanceEdit")->name('maintenance.edit');
         Route::post('/edit', "MaintController@postMaintenanceEdit")->name('maintenance.edit');
-        Route::post('/delete', "MaintController@postMaintenanceDelete")->name('maintenance.delete');
+        Route::get('/delete', "MaintController@getMaintenanceDelete")->name('maintenance.delete');
     });
 
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         Route::get('/', 'AdminController@getIndex')->name('admin');
         Route::get('/user', 'AdminController@getUser')->name('admin.user');
-        Route::post('/user/delete', 'AdminController@postUserDelete')->name('admin.user.delete');
+        Route::get('/user/delete', 'AdminController@getUserDelete')->name('admin.user.delete');
     });
 });
 Auth::routes();

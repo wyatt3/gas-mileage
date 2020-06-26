@@ -25,4 +25,40 @@ class MainController extends Controller
     public function getAbout() {
         return view('other.about');
     }
+
+    public function getUserInfo() {
+        $user = Auth::user();
+        return view('user.info', ['user' => $user]);
+    }
+
+    public function getUserEdit() {
+        $user = Auth::user();
+        return view('user.edit', ['user' => $user]);
+    }
+
+    public function postUserEdit(Request $request) {
+        $user = Auth::user();
+        if($request['type'] == 'name') {
+            $this->validate($request, [
+                'name' => 'required|min:5', 
+            ]);
+            $user->name = $request['name'];
+            $user->save();
+            return redirect(route('user'))->with('message', 'Name Updated.');
+        } else if($request['type'] == 'password') {
+            $this->validate($request, [
+                'oldPassword' => 'required',
+                'newPassword' => 'required|min:8',
+                'confirmNewPassword' => 'required|min:8|same:newPassword',
+
+            ]);
+            if(password_verify($request['oldPassword'], $user->password)) {
+                $user->password = password_hash($request['newPassword']);
+                $user->save();
+                return redirect(route('user'))->with('message', 'Password Updated.');
+            } else {
+                return redirect(route('user'))->with('message', 'Password update unsuccessful. Please try again.');
+            }
+        }    
+    }
 }

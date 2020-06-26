@@ -28,7 +28,7 @@ class MaintController extends Controller
         
     }
 
-    public function postMaintenanceDelete() {
+    public function getMaintenanceDelete() {
         
     }
 }
