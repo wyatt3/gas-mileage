@@ -8,6 +8,9 @@ class Car extends Model
 {
     protected $fillable = ['mileage', 'make', 'model', 'year', 'photo_name'];
 
+    public function name() {
+        return $this->name = $this->year . ' ' . $this->make . ' ' . $this->model; 
+    }
     public function user() {
         return $this->belongsTo('App\User');
     }

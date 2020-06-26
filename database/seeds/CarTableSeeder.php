@@ -30,5 +30,14 @@ class CarTableSeeder extends Seeder
             'photo_name' => 'photo2',
         ]);
         $car->save();
+        $car = new Car([
+            'user_id' => '1',
+            'mileage' => '123456',
+            'make' => 'Make3',
+            'model' => 'Model3',
+            'year' => '2000',
+            'photo_name' => 'photo3',
+        ]);
+        $car->save();
     }
 }

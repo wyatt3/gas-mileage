@@ -1,0 +1,7 @@
+body {
+    background-image: url('../img/bg.png');
+}
+
+.dropdown-item:hover {
+    background-color: #32425a;;
+}

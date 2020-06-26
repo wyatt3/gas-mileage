@@ -17,7 +17,7 @@ class MainController extends Controller
         }
         else {
             $user = Auth::user();
-            $cars = Car::where('user_id', $user->id)->paginate(4);
+            $cars = Car::where('user_id', $user->id)->paginate(5);
             return view('user.home', ['cars' => $cars, 'user' => $user]);
         }
     }
