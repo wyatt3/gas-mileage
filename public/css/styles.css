@@ -18,3 +18,8 @@ body {
     padding-right: 1%;
     color: #999999;
 }
+
+.car-image{
+    max-height: 175px;
+    width: auto;
+}

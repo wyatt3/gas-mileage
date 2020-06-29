@@ -23,21 +23,26 @@ class GasPagesTest extends TestCase
     
     public function testGetGas() {
         $this->actingAs(TestCase::getUser())->get('gasMileage/')
-            ->assertStatus(200)->assertSee("Get Gas Mileage");
+            ->assertStatus(200)->assertSee("");
     }
     
     public function testGetGasEdit() {
         $this->actingAs(TestCase::getUser())->get('gasMileage/edit')
-            ->assertStatus(200)->assertSee("Get Gas Edit");
+            ->assertStatus(200)->assertSee("");
     }
 
     public function testPostGasEdit() {
         $this->actingAs(TestCase::getUser())->post('gasMileage/edit')
-            ->assertStatus(200)->assertSee("Post Gas Edit");
+            ->assertStatus(200)->assertSee("");
     }
 
     public function testPostGasDelete() {
         $this->actingAs(TestCase::getUser())->post('gasMileage/delete')
-            ->assertStatus(200)->assertSee("Post Gas Delete");
+            ->assertStatus(200)->assertSee("");
+    }
+
+    public function testGetGasAdd() {
+        $this->actingAs(TestCase::getUser())->get('gasMileage/add');
+        // ->assertStatus(200)->assertViewIs('');
     }
 }

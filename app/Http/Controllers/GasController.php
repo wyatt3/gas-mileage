@@ -10,22 +10,14 @@ use App\Car;
 
 class GasController extends Controller
 {
-
-    public function checkIfUserOwnsCar($user, $car) {
-        if($user->id != $car->user_id) {
-            return redirect(route('home'));
-        }
-    }
-
-    public function getGas(Request $request) {
+    public function getGas($car_id) {
         $user = Auth::user();
-        $car = Car::find($request['car_id']);
-        $output = $this->checkIfUserOwnsCar($user, $car);
-        return $output ?? view('user.gas.home');
+        $car = Car::find($car_id);
+        return $this->checkIfUserOwnsCar($car, true) ?? view('user.gas.home');
     }
 
     public function getGasAdd() {
-        return view('gas.add');
+        return view('');
     }
 
     public function postGasAdd(Request $request) {

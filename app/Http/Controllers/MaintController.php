@@ -8,8 +8,8 @@ use App\MaintenanceEvent as Maint;
 
 class MaintController extends Controller
 {
-    public function getMaintenance() {
-        
+    public function getMaintenance($car_id) {
+        return view('user.maintenance.home');
     }
 
     public function getMaintenanceAdd() {

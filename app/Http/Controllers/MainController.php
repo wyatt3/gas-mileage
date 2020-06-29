@@ -31,21 +31,21 @@ class MainController extends Controller
         return view('user.info', ['user' => $user]);
     }
 
-    public function getUserEdit() {
+    public function getUserEdit($method) {
         $user = Auth::user();
-        return view('user.edit', ['user' => $user]);
+        return view('user.edit', ['user' => $user, 'method' => $method]);
     }
 
-    public function postUserEdit(Request $request) {
+    public function postUserEdit(Request $request, $method) {
         $user = Auth::user();
-        if($request['type'] == 'name') {
+        if($method == 'name') {
             $this->validate($request, [
                 'name' => 'required|min:5', 
             ]);
             $user->name = $request['name'];
             $user->save();
             return redirect(route('user'))->with('message', 'Name Updated.');
-        } else if($request['type'] == 'password') {
+        } else if($method == 'password') {
             $this->validate($request, [
                 'oldPassword' => 'required',
                 'newPassword' => 'required|min:8',
