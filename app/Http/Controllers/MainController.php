@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Session;
 
 use Auth;
 use App\Car;
@@ -44,7 +45,7 @@ class MainController extends Controller
             ]);
             $user->name = $request['name'];
             $user->save();
-            return redirect(route('user'))->with('message', 'Name Updated.');
+            return redirect(route('user'))->with(['message' => 'Name successfully updated', 'bg' => 'success']);
         } else if($method == 'password') {
             $this->validate($request, [
                 'oldPassword' => 'required',
@@ -53,9 +54,9 @@ class MainController extends Controller
 
             ]);
             if(password_verify($request['oldPassword'], $user->password)) {
-                $user->password = password_hash($request['newPassword']);
+                $user->password = password_hash($request['newPassword'], PASSWORD_BCRYPT);
                 $user->save();
-                return redirect(route('user'))->with('message', 'Password Updated.');
+                return redirect(route('user'))->with(['message' => 'Password successfully updated.', 'bg' => 'success']);
             } else {
                 return redirect(route('user'))->with('message', 'Password update unsuccessful. Please try again.');
             }

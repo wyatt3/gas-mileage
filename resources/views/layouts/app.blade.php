@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-light" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -74,12 +74,19 @@
                 </div>
             </div>
         </nav>
+        <br><br>
         @if(Session::has('message'))
         <div class="container mt-4 mb-0">
             <div class="row">
+                @if(Session::has('bg'))
+                <div class="col-md-12">
+                    <p class="alert alert-{{ Session::get('bg') }}">{{Session::get('message') }}</p>
+                </div>
+                @else
                 <div class="col-md-12">
                     <p class="alert alert-warning">{{Session::get('message') }}</p>
                 </div>
+                @endif
             </div>
         </div>
         @endif
