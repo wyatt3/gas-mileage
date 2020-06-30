@@ -42,7 +42,7 @@ class MainController extends Controller
         if($method == 'name') {
             $this->validate($request, [
                 'name' => 'required|min:5', 
-            ]);
+            ]); //Hi mom
             $user->name = $request['name'];
             $user->save();
             return redirect(route('user'))->with(['message' => 'Name successfully updated', 'bg' => 'success']);
