@@ -13,7 +13,7 @@ class CarController extends Controller
         return $this->checkIfUserOwnsCar($car, true) ?? view('user.car.home', ['car' => $car]);
     }
 
-    public function getCaAdd() {
+    public function getCarAdd() {
         return view('user.car.add');
     }
 

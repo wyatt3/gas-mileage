@@ -26,21 +26,21 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     Route::group(['prefix' => 'car'], function() {
-        Route::get('/add', 'CarController@getCaAdd')->name('car.add');
-        Route::post('/add', 'CarController@postCarAdd')->name('car.add');
-        Route::get('/edit', 'CarController@getCarEdit')->name('car.edit');
-        Route::post('/edit', 'CarController@postCarEdit')->name('car.edit');
-        Route::get('/delete', 'CarController@getCarDelete')->name('car.delete');
-        Route::get('/{id}', 'CarController@getCar')->name('car');
+        Route::get('add', 'CarController@getCarAdd')->name('car.add');
+        Route::post('add', 'CarController@postCarAdd')->name('car.add');
+        Route::get('edit', 'CarController@getCarEdit')->name('car.edit');
+        Route::post('edit', 'CarController@postCarEdit')->name('car.edit');
+        Route::get('delete', 'CarController@getCarDelete')->name('car.delete');
+        Route::get('{id}', 'CarController@getCar')->name('car');
     });
 
     Route::group(['prefix' => 'gasMileage'], function() {
-        Route::get('/add', 'GasController@getGasAdd')->name('gas.add');
-        Route::post('/add', 'GasController@postGasAdd')->name('gas.add');
-        Route::get('/edit', 'GasController@getGasEdit')->name('gas.edit');
-        Route::post('/edit', 'GasController@postGasEdit')->name('gas.edit');
-        Route::get('/delete', 'GasController@getGasDelete')->name('gas.delete');
-        Route::get('/{car_id}', 'GasController@getGas')->name('gas');
+        Route::get('add/{car_id}', 'GasController@getGasAdd')->name('gas.add');
+        Route::post('add/{car_id}', 'GasController@postGasAdd')->name('gas.add');
+        Route::get('edit', 'GasController@getGasEdit')->name('gas.edit');
+        Route::post('edit', 'GasController@postGasEdit')->name('gas.edit');
+        Route::get('delete', 'GasController@getGasDelete')->name('gas.delete');
+        Route::get('{car_id}', 'GasController@getGas')->name('gas');
     });
 
     Route::group(['prefix' => 'maintenance'], function() {
