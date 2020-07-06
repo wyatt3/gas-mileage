@@ -7,9 +7,9 @@
             @foreach($cars as $car)
             <div class="col-md-12 col-lg-5 col-xl-4">
                     <div class="card car-card bg-dark text-light mb-3">
-                        <a href="{{ route('car', ['id' => $car->id]) }}">
+                        <a href="{{ route('car', ['car_id' => $car->id]) }}">
                         <div class="card-header"><h3 class="text-light">{{$car->name()}}</h3></div>
-                        <div class="card-body text-center"><img class="car-image img-rounded" src="{{ asset('img/18.jpg') }}"></div>
+                        <div class="card-body text-center"><img class="car-image rounded" src="{{ asset('img/' . $car->photo_name) }}"></div>
                         </a>
                         <div class="card-footer">
                             <div class="row">
@@ -21,11 +21,8 @@
                     </div>
                 </div>
             @endforeach
-            <div class="col-md-12 col-lg-5 col-xl-4">
-                <div class="card bg-dark text-light mb-3">
-                    <div class="card-header"><h3>Add Car</h3></div>
-                    <div class="card-body"><a class="btn btn-block btn-primary" href="{{ route('car.add') }}">Add Car</a></div>
-                </div>
+            <div class="col-md-12 col-lg-3">
+                <a class="btn btn-block btn-dark" href="{{ route('car.add') }}"><img src="{{ asset('img/add.png') }}" height="150px"></a>
             </div>
         </div>
     </div>

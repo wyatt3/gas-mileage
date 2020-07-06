@@ -10,7 +10,7 @@ class CarController extends Controller
 {
     public function getCar($car_id) {
         $car = Car::find($car_id);
-        return $this->checkIfUserOwnsCar($car, true) ?? view('user.car.home', ['car' => $car]);
+        return view('user.car.home', ['car' => $car]);
     }
 
     public function getCarAdd() {
@@ -29,12 +29,12 @@ class CarController extends Controller
         return redirect(route('home'))->with('message', 'Car Added!');
     }
 
-    public function getCarEdit() {
-        
+    public function getCarEdit($car_id) {
+        return view('user.car.edit', ['car_id' => $car_id]);
     }
 
-    public function postCarEdit(Request $request) {
-        $car = Car::find($request['id']);
+    public function postCarEdit(Request $request, $car_id) {
+        $car = Car::find($car_id);
         $car->mileage = $request['mileage'];
         $car->make = $request['make'];
         $car->model = $request['model'];
@@ -43,12 +43,12 @@ class CarController extends Controller
         $car->save();
     }
 
-    public function getCarDelete(Request $request) {
-        $car = Car::find($request['id']);
+    public function getCarDelete($car_id) {
+        $car = Car::find($car_id);
         $car->user()->dissociate();
         $car->gasevents()->delete();
         $car->maintenanceevents()->delete();
         $car->delete();
-        return redirect(route('home'))->with('message', 'Car deleted.');
+        return redirect(route('home'))->with(['message' => 'Car deleted.', 'bg' => 'warning']);
     }
 }

@@ -14,7 +14,7 @@ class GasController extends Controller
         $user = Auth::user();
         $carCheck = Car::find($car_id);
         $car = Car::where('id', $car_id)->with('gasevents')->first();
-        return $this->checkIfUserOwnsCar($carCheck, true) ?? view('user.gas.home', ['car' => $car]);
+        return view('user.gas.home', ['car' => $car]);
     }
 
     public function getGasAdd($car_id) {
@@ -25,14 +25,11 @@ class GasController extends Controller
         $car = Car::find($request['car_id']);
         $event = new Gas();
 
+        $car->gasevents()->save($event);
         return redirect(route('gas', ['car_id' => $car->id]))->with(['message' => 'Fill successfully recorded!', 'bg' => 'success']);
-
-
-
-        
     }
 
-    public function getGasEdit() {
+    public function getGasEdit($event_id) {
         return "Get Gas Edit";
     }
 

@@ -20,7 +20,7 @@ class CarTableSeeder extends Seeder
             'make' => 'Make',
             'model' => 'Model',
             'year' => '2000',
-            'photo_name' => 'photo',
+            'photo_name' => '18.jpg',
         ]);
         $user->cars()->save($car);
         $car = new Car([
@@ -29,7 +29,7 @@ class CarTableSeeder extends Seeder
             'make' => 'Make2',
             'model' => 'Model2',
             'year' => '2000',
-            'photo_name' => 'photo2',
+            'photo_name' => '18.jpg',
         ]);
         $user->cars()->save($car);
         $user = User::find('1');
@@ -39,7 +39,7 @@ class CarTableSeeder extends Seeder
             'make' => 'Make3',
             'model' => 'Model3',
             'year' => '2000',
-            'photo_name' => 'photo3',
+            'photo_name' => '18.jpg',
         ]);
         $user->cars()->save($car);
     }

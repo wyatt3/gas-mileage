@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Car;
 use App\MaintenanceEvent as Maint;
 
 class MaintController extends Controller
 {
     public function getMaintenance($car_id) {
-        return view('user.maintenance.home');
+        $car = Car::find($car_id);
+        return view('user.maintenance.home', ['car' => $car]);
     }
 
-    public function getMaintenanceAdd() {
+    public function getMaintenanceAdd($car_id) {
+        return view('user.maintenance.add');
         
     }
 

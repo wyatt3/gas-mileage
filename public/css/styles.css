@@ -23,3 +23,14 @@ body {
     max-height: 175px;
     width: auto;
 }
+
+.subhead {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+@media(max-width: 768px) {
+    .subhead {
+        display: block;
+    }
+}
