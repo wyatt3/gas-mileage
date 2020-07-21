@@ -34,3 +34,7 @@ body {
         display: block;
     }
 }
+
+#averages tr td, #averages tr th{
+    width:100px;
+}

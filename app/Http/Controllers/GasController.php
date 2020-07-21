@@ -14,7 +14,13 @@ class GasController extends Controller
         $user = Auth::user();
         $carCheck = Car::find($car_id);
         $car = Car::where('id', $car_id)->with('gasevents')->first();
-        return view('user.gas.home', ['car' => $car]);
+        
+        //Calculating averages
+
+        foreach($car->gasevents as $gasEvent) {
+
+        }
+        return view('user.gas.home', ['car' => $car, ]);
     }
 
     public function getGasAdd($car_id) {
