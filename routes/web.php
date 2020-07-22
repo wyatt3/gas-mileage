@@ -19,9 +19,9 @@ Route::get('about', 'MainController@getAbout')->name('other.about');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['prefix' => 'account'], function() {
-        Route::get('/', 'MainController@getUserInfo')->name('user');
-        Route::get('edit/{method}', 'MainController@getUserEdit')->name('user.edit');
-        Route::post('edit/{method}', 'MainController@postUserEdit')->name('user.edit');
+        Route::get('/', 'UserController@getUserInfo')->name('user');
+        Route::get('edit/{method}', 'UserController@getUserEdit')->name('user.edit');
+        Route::post('edit/{method}', 'UserController@postUserEdit')->name('user.edit');
         Route::get('delete', 'AdminController@getUserDelete')->name('user.delete');
     });
     Route::group(['middleware' => 'car.check'], function() {
@@ -60,3 +60,8 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 Auth::routes();
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

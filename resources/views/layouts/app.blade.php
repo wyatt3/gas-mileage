@@ -33,11 +33,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @guest
+                    @else
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link text-light" href="{{ route('other.about') }}">About</a></li>
-
+                            <li><a class="nav-link text-light" href="{{ route('other.about') }}">About</a></li>
                     </ul>
-
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -57,6 +58,9 @@
                                 </a>
                             
                                 <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                                    @if (Auth::user()->role_id == 1)
+                                    <a class="dropdown-item text-light" href="{{ route('voyager.dashboard') }}">Admin</a>
+                                    @endif
                                     <a class="dropdown-item text-light" href="{{ route('user') }}">Account</a>
                                     <a class="dropdown-item text-light" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

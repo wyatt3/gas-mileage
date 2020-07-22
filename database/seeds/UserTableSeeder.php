@@ -19,10 +19,9 @@ class UserTableSeeder extends Seeder
         ]);
         $user->save();
         $user = new User([
-            'name' => 'Wyatt Johnson',
+            'name' => 'Wyatt',
             'email' => 'wyatt.j1834@gmail.com',
             'password' => '$2y$10$CL4Vdn.Ex/X7xDDzOpDaEOeSIpBAkIyiVbE4W37NYXNEvArFWC2US', //123456
-            'isAdmin' => '1',
         ]);
         $user->save();
     }
