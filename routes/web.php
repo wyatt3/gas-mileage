@@ -65,3 +65,5 @@ Auth::routes();
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('admin/login', function() { return redirect()->route('login');})->name('voyager.login');
