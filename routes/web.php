@@ -37,18 +37,18 @@ Route::group(['middleware' => 'auth'], function() {
         Route::group(['prefix' => 'gasMileage'], function() {
             Route::get('{car_id}/add', 'GasController@getGasAdd')->name('gas.add');
             Route::post('{car_id}/add', 'GasController@postGasAdd')->name('gas.add');
-            Route::get('{id}/edit', 'GasController@getGasEdit')->name('gas.edit');
-            Route::post('{id}/edit', 'GasController@postGasEdit')->name('gas.edit');
-            Route::get('delete', 'GasController@getGasDelete')->name('gas.delete');
+            Route::get('{car_id}/edit/{id}', 'GasController@getGasEdit')->name('gas.edit');
+            Route::post('edit', 'GasController@postGasEdit')->name('gas.update');
+            Route::get('{car_id}/delete/{id}', 'GasController@getGasDelete')->name('gas.delete');
             Route::get('{car_id}', 'GasController@getGas')->name('gas');
         });
     
         Route::group(['prefix' => 'maintenance'], function() {
             Route::get('{car_id}/add', 'MaintController@getMaintenanceAdd')->name('maintenance.add');
             Route::post('{car_id}/add', 'MaintController@postMaintenanceAdd')->name('maintenance.add');
-            Route::get('{id}/edit', "MaintController@getMaintenanceEdit")->name('maintenance.edit');
-            Route::post('{id}/edit', "MaintController@postMaintenanceEdit")->name('maintenance.edit');
-            Route::get('delete', "MaintController@getMaintenanceDelete")->name('maintenance.delete');
+            Route::get('{car_id}/edit/{id}', "MaintController@getMaintenanceEdit")->name('maintenance.edit');
+            Route::post('edit', "MaintController@postMaintenanceEdit")->name('maintenance.update');
+            Route::get('{car_id}/delete/{id}', "MaintController@getMaintenanceDelete")->name('maintenance.delete');
             Route::get('{car_id}', "MaintController@getMaintenance")->name('maintenance');
         });
     });

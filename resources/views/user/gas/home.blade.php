@@ -24,7 +24,7 @@
         </tr>
     </table>
 
-    <table id="gasMileage" class="table table-striped table-dark">
+    <table id="gasMileage" class="table table-striped table-dark text-center">
         <tr>        
             <th>Date</th>
             <th>Mileage</th>
