@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function() {
     
         Route::group(['prefix' => 'maintenance'], function() {
             Route::get('{car_id}/add', 'MaintController@getMaintenanceAdd')->name('maintenance.add');
-            Route::post('{car_id}/add', 'MaintController@postMaintenanceAdd')->name('maintenance.add');
+            Route::post('add', 'MaintController@postMaintenanceAdd')->name('maintenance.store');
             Route::get('{car_id}/edit/{id}', "MaintController@getMaintenanceEdit")->name('maintenance.edit');
             Route::post('edit', "MaintController@postMaintenanceEdit")->name('maintenance.update');
             Route::get('{car_id}/delete/{id}', "MaintController@getMaintenanceDelete")->name('maintenance.delete');

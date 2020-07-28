@@ -14,7 +14,7 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        @foreach($car->maintenanceevents as $event)
+        @foreach($car->maintenanceevents->sortByDesc('date') as $event)
         <tr> <?php $date = date_create($event->date); ?>
             <td><?php echo date_format($date, 'M jS Y'); ?></td>
             <td>{{ $event->mileage }}</td>
