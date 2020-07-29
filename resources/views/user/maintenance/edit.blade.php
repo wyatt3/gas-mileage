@@ -16,7 +16,7 @@
             <label for="cost" class="bold-label mb-0 mr-0">Cost</label>
             <div class="inner-addon left-addon text-light">
                 <i class="p-2 pl-3">$</i>
-                <input class="form-control bg-dark text-light mb-2" type="number" min="0.01" step="0.01" name="cost" id="cost" value="{{ $event->cost }}">
+                <input class="form-control bg-dark text-light mb-2" type="number" min="0.01" step="0.01" name="cost" id="cost" value="{{ number_format($event->cost, 2) }}">
             </div>
             <label for="desc" class="bold-label mb-0">Description</label>
             <textarea class="form-control bg-dark text-light mb-2" rows="5" name="description" id="desc">{{ $event->description }}</textarea>

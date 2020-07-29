@@ -36,17 +36,17 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        @foreach($car->gasevents as $event)
+        @foreach($car->gasevents->sortByDesc('date') as $event)
         <tr> <?php $date = date_create($event->date); ?>
             <td>{{ date_format($date, 'M jS Y') }}</td>
             <td>{{ $event->mileage }}</td>
             <td>{{ $event->trip_miles }}</td>
-            <td>{{ $event->gallons }}</td>
-            <td>{{ $event->gas_mileage }}</td>
+            <td>{{ number_format($event->gallons, 2) }}</td>
+            <td>{{ number_format($event->gas_mileage, 2) }}</td>
             <td>${{ number_format($event->price_per_gallon, 2) }}</td>
             <td>${{ number_format($event->total, 2) }}</td>
-            <td><a class="btn btn-warning text-light">Edit</a></td>
-            <td><a class="btn btn-danger">Delete</a></td>
+            <td><a class="btn btn-warning text-light" href="{{ route('gas.edit', ['car_id' => $car->id, 'id' => $event->id]) }}">Edit</a></td>
+            <td><a class="btn btn-danger" href="{{ route('gas.delete', ['car_id' => $car->id, 'id' => $event->id]) }}">Delete</a></td>
         </tr>
         @endforeach
     </table>

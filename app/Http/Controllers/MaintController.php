@@ -46,7 +46,7 @@ class MaintController extends Controller
         $event->cost = $request['cost'];
         $event->description = $request['description'];
         $car->maintenanceevents()->save($event);
-        return redirect()->route('maintenance', ['car_id' => $car->id])->with(['message' => 'Entry Successfully Edited!', 'bg' => 'success']);
+        return redirect()->route('maintenance', ['car_id' => $car->id])->with(['message' => 'Entry Successfully Updated!', 'bg' => 'success']);
 
     }
 

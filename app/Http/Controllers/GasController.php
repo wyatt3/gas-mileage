@@ -38,27 +38,56 @@ class GasController extends Controller
     }
 
     public function getGasAdd($car_id) {
-        return view('user.gas.add', ['car_id' => $car_id]);
+        $car = Car::find($car_id);
+        return view('user.gas.add', ['car' => $car]);
     }
 
     public function postGasAdd(Request $request) {
         $car = Car::find($request['car_id']);
-        $event = new Gas();
-
+        $event = new Gas([
+            'date' => $request['date'],
+            'mileage' => $request['miles'],
+            'trip_miles' => $request['trip_miles'],
+            'gallons' => $request['gallons'],
+            'gas_mileage' => $request['trip_miles']/$request['gallons'],
+            'price_per_gallon' => $request['total']/$request['gallons'],
+            'total' => $request['total']
+        ]);
+        if($event->mileage > $car->mileage) {
+            $car->mileage = $event->mileage;
+            $car->save();
+        }
         $car->gasevents()->save($event);
         return redirect(route('gas', ['car_id' => $car->id]))->with(['message' => 'Fill successfully recorded!', 'bg' => 'success']);
     }
 
-    public function getGasEdit($event_id) {
-        return "Get Gas Edit";
+    public function getGasEdit($car_id, $id) {
+        $car = Car::find($car_id);
+        $event = Gas::find($id);
+        return view('user.gas.edit', ['car' => $car, 'event' => $event]);
     }
 
-    public function postGasEdit() {
-        return "Post Gas Edit";
+    public function postGasEdit(Request $request) {
+        $car = Car::find($request['car_id']);
+        $event = Gas::find($request['id']);
+        $event->date = $request['date'];
+        $event->mileage = $request['miles'];
+        $event->trip_miles = $request['trip_miles'];
+        $event->gallons = $request['gallons'];
+        $event->gas_mileage = $request['trip_miles']/$request['gallons'];
+        $event->price_per_gallon = $request['total']/$request['gallons'];
+        $event->total = $request['total'];
+        if($event->mileage > $car->mileage) {
+            $car->mileage = $event->mileage;
+            $car->save();
+        }
+        $car->gasevents()->save($event);
+        return redirect()->route('gas', ['car_id' => $car->id])->with(['message' => 'Entry Successfully Updated!', 'bg' => 'success']);
     }
 
-    public function getGasDelete() {
-        return "Post Gas Delete";
-
+    public function getGasDelete($car_id, $id) {
+        $event = Gas::find($id);
+        $event->delete();
+        return redirect()->route('gas', ['car_id' => $car_id])->with(['message' => 'Entry Successfully Deleted!', 'bg' => 'danger']);
     }
 }
