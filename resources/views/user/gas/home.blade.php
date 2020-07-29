@@ -17,10 +17,10 @@
             <th>Total/Fill Up</th>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ number_format($averages['avgMiles'], 2) }}</td>
+            <td>{{ number_format($averages['avgMileage'], 2) }}</td>
+            <td>${{ number_format($averages['avgCostPerGallon'], 2) }}</td>
+            <td>${{ number_format($averages['avgTotal'], 2) }}</td>
         </tr>
     </table>
 
@@ -36,9 +36,17 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        @foreach($car->gasevents as $gasEvent)
-        <tr> <?php $date = date_create($gasEvent->date); ?>
-            <td><?php echo date_format($date, 'M jS Y'); ?></td>
+        @foreach($car->gasevents as $event)
+        <tr> <?php $date = date_create($event->date); ?>
+            <td>{{ date_format($date, 'M jS Y') }}</td>
+            <td>{{ $event->mileage }}</td>
+            <td>{{ $event->trip_miles }}</td>
+            <td>{{ $event->gallons }}</td>
+            <td>{{ $event->gas_mileage }}</td>
+            <td>${{ number_format($event->price_per_gallon, 2) }}</td>
+            <td>${{ number_format($event->total, 2) }}</td>
+            <td><a class="btn btn-warning text-light">Edit</a></td>
+            <td><a class="btn btn-danger">Delete</a></td>
         </tr>
         @endforeach
     </table>

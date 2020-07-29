@@ -16,11 +16,25 @@ class GasController extends Controller
         $car = Car::where('id', $car_id)->with('gasevents')->first();
         
         //Calculating averages
-
-        foreach($car->gasevents as $gasEvent) {
-
+        $averages = [
+            'avgMiles' => 0,
+            'avgMileage' => 0,
+            'avgCostPerGallon' => 0,
+            'avgTotal' => 0,
+        ];
+        $count = 0;
+        foreach($car->gasevents as $event) {
+            $averages['avgMiles'] += $event->trip_miles;
+            $averages['avgMileage'] += $event->gas_mileage;
+            $averages['avgCostPerGallon'] += $event->price_per_gallon;
+            $averages['avgTotal'] += $event->total;
+            $count += 1;
         }
-        return view('user.gas.home', ['car' => $car, ]);
+            $averages['avgMiles'] /= $count;
+            $averages['avgMileage'] /= $count;
+            $averages['avgCostPerGallon'] /= $count;
+            $averages['avgTotal'] /= $count;
+        return view('user.gas.home', ['car' => $car, 'averages' => $averages]);
     }
 
     public function getGasAdd($car_id) {
