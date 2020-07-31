@@ -19,6 +19,12 @@ class MaintController extends Controller
     }
 
     public function postMaintenanceAdd(Request $request) {
+        $valid = $request->validate([
+            'date' => 'required',
+            'mileage' => 'required',
+            'cost' => 'required',
+            'description' => 'required',
+        ]);
         $car = Car::find($request['car_id']);
         $event = new Maint([
             'date' => $request['date'],
@@ -39,6 +45,12 @@ class MaintController extends Controller
     }
 
     public function postMaintenanceEdit(Request $request) {
+        $valid = $request->validate([
+            'date' => 'required',
+            'mileage' => 'required',
+            'cost' => 'required',
+            'description' => 'required',
+        ]);
         $car = Car::find($request['car_id']);
         $event = Maint::find($request['id']);
         $event->date = $request['date'];

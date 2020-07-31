@@ -27,9 +27,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'car.check'], function() {
         Route::group(['prefix' => 'car'], function() {
             Route::get('add', 'CarController@getCarAdd')->name('car.add');
-            Route::post('add', 'CarController@postCarAdd')->name('car.add');
+            Route::post('add', 'CarController@postCarAdd')->name('car.store');
             Route::get('{car_id}/edit', 'CarController@getCarEdit')->name('car.edit');
-            Route::post('{car_id}/edit', 'CarController@postCarEdit')->name('car.edit');
+            Route::post('edit', 'CarController@postCarEdit')->name('car.update');
             Route::get('{car_id}/delete', 'CarController@getCarDelete')->name('car.delete');
             Route::get('{car_id}', 'CarController@getCar')->name('car');
         });

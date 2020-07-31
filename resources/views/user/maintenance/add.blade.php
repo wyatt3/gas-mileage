@@ -9,17 +9,29 @@
             @csrf
             <input type="hidden" name="car_id" value="{{ $car->id }}">
             <label for="date" class="bold-label mb-0">Date</label>
-            <input class="form-control bg-dark text-light mb-2" type="date" name="date" id="date" value="{{date('Y-m-d')}}">
-            <label for="mileage" class="bold-label mb-0">Mileage</label>
-            <input class="form-control bg-dark text-light mb-2" type="number" name="mileage" id="mileage" value="{{$car->mileage}}">
-            <label for="cost" class="bold-label mb-0 mr-0">Cost</label>
+            <input class="form-control bg-dark text-light mb-1" type="date" name="date" id="date" value="{{date('Y-m-d')}}">
+            @error('date')
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+            <label for="mileage" class="bold-label mb-0 mt-1">Mileage</label>
+            <input class="form-control bg-dark text-light mb-1" type="number" name="mileage" id="mileage" value="{{ $car->mileage }}">
+            @error('mileage')
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+            <label for="cost" class="bold-label mb-0 mr-0 mt-1">Cost</label>
             <div class="inner-addon left-addon text-light">
                 <i class="p-2 pl-3">$</i>
-                <input class="form-control bg-dark text-light mb-2" type="number" min="0.01" step="0.01" name="cost" id="cost">
+                <input class="form-control bg-dark text-light mb-1" type="number" min="0.01" step="0.01" name="cost" id="cost">
             </div>
-            <label for="desc" class="bold-label mb-0">Description</label>
-            <textarea class="form-control bg-dark text-light mb-2" rows="5" name="description" id="desc"></textarea>
-            <input type="submit" class="btn btn-primary" value="Submit">
+            @error('cost')
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+            <label for="desc" class="bold-label mb-0 mt-1">Description</label>
+            <textarea class="form-control bg-dark text-light mb-1" rows="5" name="description" id="desc"></textarea>
+            @error('description')
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+            <input type="submit" class="btn btn-primary mt-1" value="Submit">
         </form>
     </div>
 </div>

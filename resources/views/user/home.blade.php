@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1>User Home</h1>
+        <h1>Home</h1>
         <div class="row">
             @foreach($cars as $car)
             <div class="col-md-12 col-lg-5 col-xl-4">
                     <div class="card car-card bg-dark text-light mb-3">
                         <a href="{{ route('car', ['car_id' => $car->id]) }}">
                         <div class="card-header"><h3 class="text-light">{{$car->name()}}</h3></div>
-                        <div class="card-body text-center"><img class="car-image rounded" src="{{ asset('img/' . $car->photo_name) }}"></div>
+                        <div class="card-body text-center"><img class="car-image rounded" src="{{ asset('storage/app/carImages/' . $car->photo_name) }}"></div>
                         </a>
                         <div class="card-footer">
                             <div class="row">

@@ -19,7 +19,7 @@ class CreateMaintenanceEventsTable extends Migration
             $table->date('date');
             $table->integer('mileage');
             $table->text('description');
-            $table->double('cost', 5, 2);
+            $table->double('cost', 8, 2);
             $table->timestamps();
         });
     }

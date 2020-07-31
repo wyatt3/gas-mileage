@@ -63,3 +63,15 @@ body {
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+.about {
+    font-size: 18px;
+}
+
+.bg-primary-trans {
+    background-color: rgba(0, 143, 100, 0.8);
+}
+
+.bg-dark-trans {
+    background-color: rgba(21, 26, 34, 0.8);
+}

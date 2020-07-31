@@ -42,4 +42,15 @@ class UserController extends Controller
             }
         }    
     }
+
+    public function getUserDelete() {
+        $user = Auth::user();
+        $user->cars()->get()->each(function($car) {
+            $car->gasevents()->delete();
+            $car->maintenanceevents()->delete();
+        });
+        $user->cars()->delete();
+        $user->delete();
+        return redirect(route('home'))->with('message', 'Account successfully closed');
+    }
 }

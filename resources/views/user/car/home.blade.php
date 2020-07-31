@@ -9,7 +9,7 @@
         <a class="mr-3 btn btn-primary" href="{{ route('gas', ['car_id' => $car->id]) }}">View Gas Mileage</a>
         <a class="btn btn-primary" href="{{ route('maintenance', ['car_id' => $car->id]) }}">View Maintenance</a>
     </div>
-        <img class="rounded" src="{{ asset('img/18.jpg') }}" width="450px">
+        <img class="rounded" src="{{ asset('storage/app/carImages/'. $car->photo_name) }}" width="450px">
         <p class="mt-3"><strong>Year: </strong> {{ $car->year }}<br>
         <strong>Make: </strong> {{ $car->make }}<br>
         <strong>Model: </strong> {{ $car->model }}<br>

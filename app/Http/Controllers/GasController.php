@@ -30,10 +30,17 @@ class GasController extends Controller
             $averages['avgTotal'] += $event->total;
             $count += 1;
         }
+        if ($count != 0) {
             $averages['avgMiles'] /= $count;
             $averages['avgMileage'] /= $count;
             $averages['avgCostPerGallon'] /= $count;
             $averages['avgTotal'] /= $count;
+        } else {
+            $averages['avgMiles'] = 0;
+            $averages['avgMileage'] = 0;
+            $averages['avgCostPerGallon'] = 0;
+            $averages['avgTotal'] = 0;
+        }
         return view('user.gas.home', ['car' => $car, 'averages' => $averages]);
     }
 
@@ -43,6 +50,13 @@ class GasController extends Controller
     }
 
     public function postGasAdd(Request $request) {
+        $valid = $request->validate([
+            'date' => 'required',
+            'miles' => 'required',
+            'trip_miles' => 'required',
+            'gallons' => 'required',
+            'total' => 'required',
+        ]);
         $car = Car::find($request['car_id']);
         $event = new Gas([
             'date' => $request['date'],
@@ -68,6 +82,13 @@ class GasController extends Controller
     }
 
     public function postGasEdit(Request $request) {
+        $valid = $request->validate([
+            'date' => 'required',
+            'miles' => 'required',
+            'trip_miles' => 'required',
+            'gallons' => 'required',
+            'total' => 'required',
+        ]);
         $car = Car::find($request['car_id']);
         $event = Gas::find($request['id']);
         $event->date = $request['date'];
