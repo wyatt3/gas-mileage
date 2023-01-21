@@ -21,7 +21,7 @@
         <div class="col-12 col-lg-5 text-center"><img src="{{ asset('img/avataaars.svg') }}" alt="" height="100%"></div>
         <div class="col-12 col-lg-7 pt-5 text-right text-light">
             <h3>About Me</h3>
-            <p class="about text-justify">I am Wyatt Johnson. I created this website as one of my final projects in the Web &amp; Mobile Development Program at Bridgerland Technical College. If you like this app, check out my portfolio <a href="https://www.wj-web-projects.xyz">here</a>! I have many other apps and I am constantly updating my portfolio with new projects.</p>
+            <p class="about text-justify">My name is Wyatt Johnson, I created this website as one of my final projects in the Web &amp; Mobile Development Program at Bridgerland Technical College. If you like this app, check out my portfolio <a href="https://www.wyattjohnson.net">here</a>! I have many other apps and I am constantly updating my portfolio with new projects.</p>
         </div>
     </div>
     <div class="row bg-primary-trans rounded mt-3 px-5 pt-3 pb-3">

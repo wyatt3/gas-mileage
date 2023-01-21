@@ -5,7 +5,7 @@
 <h1 class="mt-4">Edit Car ({{$car->name()}})</h1>
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <form class="form-group" action="{{ route('car.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label class="bold-label mb-0" for="photo">Photo</label>

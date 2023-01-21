@@ -23,8 +23,9 @@
             <td>${{ number_format($averages['avgTotal'], 2) }}</td>
         </tr>
     </table>
-
     <table id="gasMileage" class="table table-striped table-dark text-center">
+        <th class="hide text-center py-2 bg-dark" style="font-size:25px;">Gas Fill Ups</th> 
+        <thead>
         <tr>        
             <th>Date</th>
             <th>Mileage</th>
@@ -36,17 +37,18 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
+        </thead>
         @foreach($car->gasevents->sortByDesc('date') as $event)
         <tr> <?php $date = date_create($event->date); ?>
-            <td>{{ date_format($date, 'M jS Y') }}</td>
-            <td>{{ $event->mileage }}</td>
-            <td>{{ $event->trip_miles }}</td>
-            <td>{{ number_format($event->gallons, 2) }}</td>
-            <td>{{ number_format($event->gas_mileage, 2) }}</td>
-            <td>${{ number_format($event->price_per_gallon, 2) }}</td>
-            <td>${{ number_format($event->total, 2) }}</td>
-            <td><a class="btn btn-warning text-light" href="{{ route('gas.edit', ['car_id' => $car->id, 'id' => $event->id]) }}">Edit</a></td>
-            <td><a class="btn btn-danger" href="{{ route('gas.delete', ['car_id' => $car->id, 'id' => $event->id]) }}">Delete</a></td>
+            <td class="gm">{{ date_format($date, 'M jS Y') }}</td>
+            <td class="gm">{{ $event->mileage }}</td>
+            <td class="gm">{{ $event->trip_miles }}</td>
+            <td class="gm">{{ number_format($event->gallons, 2) }}</td>
+            <td class="gm">{{ number_format($event->gas_mileage, 2) }}</td>
+            <td class="gm">${{ number_format($event->price_per_gallon, 2) }}</td>
+            <td class="gm">${{ number_format($event->total, 2) }}</td>
+            <td class="gm"><a class="btn btn-warning text-light" href="{{ route('gas.edit', ['car_id' => $car->id, 'id' => $event->id]) }}">Edit</a></td>
+            <td class="gm"><a class="btn btn-danger" href="{{ route('gas.delete', ['car_id' => $car->id, 'id' => $event->id]) }}">Delete</a></td>
         </tr>
         @endforeach
     </table>

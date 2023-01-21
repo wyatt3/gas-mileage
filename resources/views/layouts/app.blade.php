@@ -3,14 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A gas mileage tracker for all your cars! Take car care into your own hands with this free-to-use web app!">
+    <meta name="author" content="Wyatt Johnson">
+    <meta name="robots" content="index, follow">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - Car Care Web App</title>
 
-    <!-- Scripts -->
-
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,8 +21,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/mytheme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gmtable.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mainttable.css') }}" rel="stylesheet">
 </head>
 <body>
+<script data-ad-client="ca-pub-4119580769502277" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <div id="app">
         <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">

@@ -10,10 +10,6 @@ body {
     height: 350px;
 }
 
-.car-image {
-    height: 250px;
-}
-
 .copyright {
     padding-right: 1%;
     color: #999999;
@@ -21,7 +17,8 @@ body {
 
 .car-image{
     max-height: 175px;
-    width: auto;
+    object-fit:cover;
+    width: 100%;
 }
 
 .subhead {

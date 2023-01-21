@@ -1,0 +1,474 @@
+AWSTATS DATA FILE 7.7 (build 20161204)
+# If you remove this file, all statistics for date 202008 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.mycars.wyattjohnson.net.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2006                
+POS_TIME 2680                
+POS_VISITOR 9790                
+POS_DAY 12017               
+POS_DOMAIN 3413                
+POS_LOGIN 3706                
+POS_ROBOT 3861                
+POS_WORMS 4380                
+POS_EMAILSENDER 4511                
+POS_EMAILRECEIVER 4654                
+POS_SESSION 12349               
+POS_SIDER 12555               
+POS_FILETYPES 4789                
+POS_DOWNLOADS 5012                
+POS_OS 5060                
+POS_BROWSER 5249                
+POS_SCREENSIZE 5757                
+POS_UNKNOWNREFERER 5831                
+POS_UNKNOWNREFERERBROWSER 6098                
+POS_ORIGIN 6274                
+POS_SEREFERRALS 6415                
+POS_PAGEREFS 6587                
+POS_SEARCHWORDS 7017                
+POS_KEYWORDS 7178                
+POS_MISC 2343                
+POS_ERRORS 7246                
+POS_CLUSTER 3562                
+POS_SIDER_404 7409                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20200816092100 2094 665104 0
+FirstTime 20200803170721
+LastTime 20200816033108
+LastUpdate 20200820043301 2094 2090 0 0 4
+TotalVisits 68                  
+TotalUnique 48                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 55                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 54 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1 1 2077 2 20 409827
+1 26 46 14685967 12 16 675771
+2 76 100 3614669 47 114 7576992
+3 32 51 8309972 33 92 9353856
+4 1 1 1918 4 10 5387
+5 1 5 47316 4 8 4780
+6 0 0 0 7 19 214894
+7 0 0 0 0 0 0
+8 0 0 0 4 22 410150
+9 0 0 0 6 28 419304
+10 0 0 0 1 10 204989
+11 0 0 0 0 0 0
+12 2 2 2078 0 0 0
+13 1 1 1912 0 0 0
+14 100 153 79025651 57 78 1323594
+15 130 308 138024144 55 100 179407
+16 109 161 32615942 34 53 18656
+17 45 74 1387276 38 46 34533
+18 36 65 25669542 20 22 7546
+19 81 177 45077513 21 22 10545
+20 64 127 24280876 14 62 541614
+21 18 21 10828604 6 10 4438216
+22 1 2 12593169 0 0 0
+23 18 27 279640 6 36 312502
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 6
+us 732 1312 396423785
+fr 4 4 7147
+ie 2 2 3720
+cn 2 2 2078
+np 1 1 5694
+sg 1 1 5842
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 10
+baidu 70 1434542 20200814103926 0
+MJ12bot/ 36 34893 20200816051229 17
+Mediapartners-Google 28 424976 20200816092047 0
+(firefox/)([0-9]\.|[0-1][0]\.) 6 11090 20200804150028 0
+unknown 6 337 20200807153838 6
+Googlebot/ 5 1955 20200816092100 2
+favicon 4 90687 20200807153437 0
+facebookexternalhit/ 4 339472 20200803203716 0
+spider 3 2113 20200808021420 2
+CFNetwork 1 84868 20200803203720 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+css 154 2425344 0 0
+png 179 4298367 0 0
+html 339 668337 0 0
+jpg 134 375438512 0 0
+js 68 15010 0 0
+jpeg 2 222586 0 0
+Unknown 403 13168611 0 0
+svg 43 211499 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 9
+linuxandroid 241 160
+ios_iphone 152 56
+macosx12 1 1
+linux 8 1
+win7 2 1
+macosx 6 6
+win10 790 461
+Unknown 86 52
+ios_ipad 36 4
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 22
+safari11.0 72 8
+chrome84.0.4147.89 494 277
+android 6 0
+firefox52.0 1 1
+chrome73.0.3683.86 4 4
+chrome76.0.3809.100 5 1
+chrome84.0.4147.111 33 15
+chrome79.0.3945.117 2 2
+chrome83.0.4103.97 5 1
+iphone 21 1
+mozilla 80 46
+netscape5.0 2 2
+chrome79.0.3945.136 173 124
+chrome78.0.3904.70 8 1
+chrome51.0.2704.106 2 2
+chrome76.0.3809.71 16 2
+chrome83.0.4103.61 2 1
+chrome74.0.3729.169 3 3
+safari13.1.1 28 11
+chrome84.0.4147.105 294 196
+Unknown 6 6
+safari13.0.5 65 38
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+AppEngine-Google;_(_http://code.google.com/appengine;_appid:_s~snapchat-proxy) 20200806184723
+Mozilla/5.0_(compatible;_woorankreview/2.0;__https://www.woorank.com/) 20200807153842
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+AppEngine-Google;_(_http://code.google.com/appengine;_appid:_s~snapchat-proxy) 20200806184723
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 188 211
+From1 0 0
+From2 4 4
+From3 20 46
+From4 530 1061
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+bing 2 2
+www_google_com 2 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 7
+https://wyattjohnson.net 10 10
+https://mycars.wj-web-projects.xyz/public 3 3
+https://www.wyattjohnson.net 3 3
+https://www.wj-web-projects.xyz 2 2
+https://www.upwork.com 1 1
+https://mycars.wj-web-projects.xyz/public/ 1 23
+https://mycars.wj-web-projects.xyz/public/css/styles.css 0 4
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+amazon 2
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+amazon 2
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+403 52 847886
+302 159 44499
+206 10 13744069
+500 15 8548142
+301 94 18881
+404 180 514153
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 38
+/sitemap.xml 2 -
+/storage/app/carImages/image.jpg 1 https://mycars.wyattjohnson.net/
+/public/test2/test.txt 1 -
+/xwnTlat8pA05w/Q5cezYNy4jU3f7yWak/kpDYC400MOkMvCOF/b9HVtfdqfFLr4u7msi0/xkCwg2CFKTusR 1 -
+/apple-touch-icon.png 15 -
+/storage/app/carImages/20200802_103009.jpg 9 https://mycars.wj-web-projects.xyz/car/11
+/css/mytheme.min.css.map 19 -
+/public/storage/app/carImages/15966635697822584186527351640036.jpg 5 https://mycars.wyattjohnson.net/public/car/1
+/public/storage/app/carImages/1.jpg 1 -
+/faxSuuGuN6EKuDL/fyu6MSiDXUTETYPFxU/O4sQqQR2wND/XWJv5pV21Aa17WqZ 1 -
+/test.jpg 1 https://mycars.wyattjohnson.net/
+/storage/app/carImages/defaultCar.jpg 12 https://mycars.wj-web-projects.xyz/car/13
+/storage/app/carImages/S2000.jpg 4 https://mycars.wyattjohnson.net/
+/public/psvf9DKTQlP8Mb/Jl9iyN7Qvk/0OJtWHTaDDNM/3sbiYXM3CJD6O/Lekd2kSmM5PXsYMrBAJ 1 -
+/public/sitemap.xml.gz 2 -
+/public/img/robots.txt 1 -
+/public/test2/test/test.txt 1 -
+/public/storage/app/carImages/russ-logo.png 7 https://mycars.wyattjohnson.net/public/car/1
+/public/sitemap_index.xml 2 -
+/apple-touch-icon-precomposed.png 10 -
+/public/storage/app/public/blog-posts/July2020/blogPost.png 1 -
+/.well-known/security.txt 4 -
+/apple-touch-icon-120x120.png 6 -
+/public 2 https://mycars.wyattjohnson.net/public/car/add
+/public/test2/test.text 1 -
+/sitemap_index.xml 2 -
+/public/storage/app/carImages/Russ(2).jpg 3 http://mycars.wj-web-projects.xyz/public/
+/public/storage/app/carImages/S2000.jpg 1 https://mycars.wyattjohnson.net/public/car/1
+/public/storage/app/carImages/defaultCar.jpg 19 https://mycars.wj-web-projects.xyz/public/
+/public/test2/test.txt. 1 -
+/apple-touch-icon-120x120-precomposed.png 6 -
+/sitemap.xml.gz 2 -
+/public/css/mytheme.min.css.map 25 -
+/public/sitemap.xml 2 -
+/public/storage/app/public/app/carImages/defaultCar.jpg 3 https://mycars.wyattjohnson.net/public/
+/public/Vcj3PDuLmcNVA3qt/Qx6e4ewvBNqD9jl/QC7bE4Q6uz5Izw 1 -
+/public/storage/app/carImages/Civic%20SI.jpg 3 http://mycars.wj-web-projects.xyz/public/car/15
+/public/gasMileage/1 2 https://mycars.wyattjohnson.net/public/car/1
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 55
+98.33.220.105 173 257 43814577 20200807131258
+204.113.60.151 87 132 33935301 20200803192443
+204.113.60.139 61 169 162716856 20200804183349
+204.113.60.189 54 67 3671659 20200807175825
+204.113.60.161 51 65 19550818 20200807180027
+204.113.60.172 42 64 12582928 20200805173338
+204.113.205.110 36 49 428871 20200811163440
+107.77.230.231 34 58 33183835 20200803205327
+204.113.60.159 30 46 39857199 20200811153430
+54.82.67.88 14 14 15785 20200807153842
+54.163.216.30 2 18 408416 20200807153438
+54.237.230.22 10 19 216568 20200807153838
+103.111.79.240 1 1 5694 20200808182952
+65.154.226.100 2 10 205655 20200803190440
+107.77.227.231 13 22 267881 20200805232104
+67.2.2.207 11 21 476740 20200804021603
+107.77.227.107 1 8 203566 20200805195727
+166.170.14.122 10 20 11299537 20200803195925
+104.224.81.113 1 1 5842 20200816033108
+35.187.132.77 1 1 1924 20200806162636
+107.77.219.198 9 26 634771 20200803203728
+107.77.230.170 9 9 22318 20200805213959
+209.239.122.185 1 1 2077 20200812000831
+107.77.229.14 5 7 2173522 20200811011036
+208.70.45.4 1 5 47316 20200806050240
+167.71.154.251 1 1 2005 20200808182951
+172.58.62.145 0 1 121479 
+34.245.146.75 2 2 3720 20200805145925
+71.199.32.83 0 2 242958 
+52.90.49.207 1 11 204859 20200807153438
+76.27.104.217 11 32 1115232 20200803201810
+35.187.132.227 2 2 3726 20200803200015
+66.44.205.69 1 5 47308 20200803195049
+54.174.157.206 7 23 412263 20200807153438
+3.83.239.70 7 47 1024352 20200807153838
+107.77.227.97 0 1 121479 
+73.63.63.218 0 1 121479 
+65.154.226.109 2 16 407132 20200803190303
+221.229.218.152 2 2 2078 20200814122845
+35.187.132.73 3 3 5782 20200806184723
+107.77.228.106 5 5 11759 20200805232213
+107.77.229.17 0 1 121479 
+107.77.231.172 0 1 121479 
+204.113.60.173 3 15 2315204 20200810185830
+67.2.6.114 1 3 244876 20200806043250
+107.77.228.187 1 2 12593169 20200811223736
+174.204.36.128 0 1 121479 
+51.158.120.76 4 4 7147 20200810205318
+3.95.206.141 4 4 7771 20200807153438
+3.86.191.75 2 2 3849 20200805151102
+107.77.231.201 5 6 19478 20200803203939
+69.27.16.210 3 13 293487 20200807195714
+54.209.221.176 5 12 211443 20200807153836
+34.228.226.4 2 2 3852 20200805151101
+166.216.158.144 9 12 10806286 20200805211737
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 11
+20200803 164 316 81176988 12
+20200804 126 258 175397897 5
+20200805 132 225 28437716 19
+20200806 100 166 29268041 7
+20200807 135 228 24774816 14
+20200808 2 2 7699 2
+20200810 7 19 2322351 2
+20200811 72 104 55052761 4
+20200812 1 1 2077 1
+20200814 2 2 2078 1
+20200816 1 1 5842 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 4
+5mn-15mn 4
+15mn-30mn 3
+0s-30s 40
+2mn-5mn 8
+30s-2mn 5
+30mn-1h 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 71
+/ 213 435132 41 31
+/public/ 126 233205 21 17
+/admin/voyager-assets 46 8429866 0 0
+/login 39 66879 3 2
+/gasMileage/1 22 127762 0 1
+/link 21 944 0 1
+/maintenance/1 19 58094 0 1
+/public/admin/voyager-assets 18 3443506 0 0
+/public/login 17 25501 2 1
+/car/1 16 34890 0 1
+/createLink 1 32 0 0
+/public/car/1/edit 5 12271 0 0
+/admin/cars/1/edit 1 13793 0 0
+/public/maintenance/1 6 14959 0 1
+/car/11 8 16741 0 0
+/car/17 3 6903 0 0
+/public/car/12 2 4252 0 1
+/car/3 1 2106 0 0
+/maintenance/1/edit/20 1 1928 0 0
+/public/maintenance/12 2 3543 0 0
+/public/car/1 15 32484 0 0
+/car/10 1 2073 0 0
+/admin/cars/4/edit 1 13809 0 0
+/password/reset 1 1614 0 1
+/admin/users 2 31215 0 0
+/public/gasMileage/1/add 1 1950 0 0
+/maintenance/1/edit/17 1 1939 0 0
+/register 11 15121 0 2
+/maintenance/1/add 3 5782 0 0
+/maintenance/1/edit/19 1 1926 0 0
+/admin/cars 9 143544 0 0
+/gasMileage/17/add 1 2087 0 0
+/car/13 2 4214 0 1
+/public/admin 5 62700 0 0
+/maintenance/17 4 7699 0 0
+/gasMileage/17 3 6380 0 0
+/maintenance/1/edit/18 1 1944 0 0
+/admin/profile 2 24201 0 0
+/maintenance/17/add 1 2058 0 0
+/car/1/edit 6 14413 0 0
+/public/car/16 3 6300 0 0
+/car/4/edit 2 4566 0 0
+/public/admin/maintenance-events 1 17259 0 0
+/public/admin/users 1 15671 0 0
+/car/add 13 29127 0 0
+/public/admin/cars 2 31963 0 0
+/car/16 2 4425 0 0
+/public/car/add 10 23089 0 0
+/public/maintenance/12/add 2 3839 0 0
+/admin/cars/5/edit 2 27630 0 0
+/car/13/edit 1 2282 0 0
+/car/17/edit 1 2515 0 0
+/public/register 4 3264 0 2
+/public/admin/menus/1/builder 1 15473 0 0
+/public/admin/gas-events 1 21849 0 0
+/admin/users/1/edit 4 52386 0 0
+/public/car/15 3 6341 0 0
+/gasMileage/3 1 1947 0 1
+/public/car/15/edit 1 2305 0 0
+/public/car/14 1 2125 0 0
+/admin 12 151975 0 0
+/public/car/17 1 2134 0 0
+/admin/cars/3/edit 1 13842 0 0
+/about 5 11139 0 1
+/public/maintenance/1/add 4 7464 0 0
+/public/car/18 1 2135 0 0
+/car/11/edit 3 6887 0 0
+/account 4 8742 0 0
+/gasMileage/1/add 5 14149 0 0
+/public/gasMileage/1 6 22121 1 3
+/car/4 6 12544 0 0
+END_SIDER

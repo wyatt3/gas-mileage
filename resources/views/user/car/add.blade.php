@@ -4,7 +4,7 @@
     <a href="{{ route('home') }}" class="btn btn-outline-primary">&lsaquo; Back to Home</a>
 
     <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <form class="form-group" action="{{ route('car.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label class="bold-label mb-0" for="photo">Photo</label>

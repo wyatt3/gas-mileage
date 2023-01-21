@@ -4,7 +4,7 @@
 <a href="{{ route('gas', ['car_id' => $car->id]) }}" class="btn btn-outline-primary">&lsaquo; Back to Gas Mileage</a>
 <h1 class="mt-4 mb-3">Edit Gas Entry ({{ $car->name() }})</h1>
 <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <form action="{{ route('gas.update') }}" method="POST" class="form-group">
             @csrf
             <input type="hidden" name="car_id" value="{{ $car->id }}">

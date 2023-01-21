@@ -63,7 +63,7 @@ class CarController extends Controller
             $request->photo->storeAs('public/app/carImages', $request->photo->getClientOriginalName());
             $car->photo_name = $request->photo->getClientOriginalName();
         }
-        $car->mileage = $request['mileage'];
+         $car->mileage = $request['mileage'];
         $car->make = $request['make'];
         $car->model = $request['model'];
         $car->year = $request['year'];

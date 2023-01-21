@@ -18,11 +18,11 @@ Route::get('/', 'MainController@getIndex')->name('home');
 Route::get('about', 'MainController@getAbout')->name('other.about');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::group(['prefix' => 'account'], function() {
+    Route::group(['prefix' => 'account', 'middleware' => 'guest.check'], function() {
         Route::get('/', 'UserController@getUserInfo')->name('user');
         Route::get('edit/{method}', 'UserController@getUserEdit')->name('user.edit');
         Route::post('edit/{method}', 'UserController@postUserEdit')->name('user.edit');
-        Route::get('delete', 'AdminController@getUserDelete')->name('user.delete');
+        Route::get('delete', 'UserController@getUserDelete')->name('user.delete');
     });
     Route::group(['middleware' => 'car.check'], function() {
         Route::group(['prefix' => 'car'], function() {
@@ -53,11 +53,6 @@ Route::group(['middleware' => 'auth'], function() {
         });
     });
 
-    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
-        Route::get('/', 'AdminController@getIndex')->name('admin');
-        Route::get('user/delete/{id}', 'AdminController@getUserDelete')->name('admin.user.delete');
-        Route::get('user/{id}', 'AdminController@getUser')->name('admin.user');
-    });
 });
 Auth::routes();
 
